@@ -12,7 +12,8 @@
   },
   "permissions": [
     "contextMenus",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
   "host_permissions": [
     "http://*/"

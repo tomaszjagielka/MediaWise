@@ -1,6 +1,6 @@
 const CONTEXT_MENU_ID = "MY_CONTEXT_MENU";
 
-function checkBackground(info, tab) {
+function checkAuthorBackground(info, tab) {
     if (info.menuItemId !== CONTEXT_MENU_ID) {
         return;
     }
@@ -20,26 +20,26 @@ function checkBackground(info, tab) {
     //     console.log(result);
     // })
 
-    // const requestData = {
-    //     "links":
-    //         ["https://en.wikipedia.org/wiki/Brian_and_Ed_Krassenstein",
-    //         "https://mobile.twitter.com/edkrassen",
-    //         "https://www.instagram.com/ed_krassenstein/?hl=en",
-    //         "https://www.rollingstone.com/culture/culture-news/krassenstein-brothers-twitter-elon-musk-1234646852/",
-    //         "https://knowyourmeme.com/memes/people/brian-and-ed-krassenstein"],
-    //     "titles": 
-    //         ["Brian and Ed Krassenstein - Wikipedia",
-    //         "Ed Krassenstein (@EdKrassen) / Twitter",
-    //         "Eddie Krassenstein (@ed_krassenstein) • Instagram photos",
-    //         "Krassenstein Brothers Return to Twitter to Battle Elon Musk",
-    //         "Brian and Ed Krassenstein | Know Your Meme"],
-    //     "descriptions":
-    //         ["Brian and Ed Krassenstein are American twin brothers who are writers, entrepreneurs, and social media personalities. They reside in Fort Myers, Florida and ...",
-    //         "Ed Krassenstein. @EdKrassen. Living in reality. Follow my twin: @Krassenstein . Web3 futurist. DeSo: http://diamondapp.com/u/Krassenstein Subscribe on ...",
-    //         "Eddie Krassenstein. Building on the DeSo Blockchain. Co-founded 3dprint.com, NFTz.me, HillReporter.com, etc. diamondapp.com/u/Krassenstein. 51 posts.",
-    //         "Twin brothers Edward and Brian Krassenstein, of Fort Myers, Florida, were once little-known entrepreneurs who ran investment web forums that ...",
-    //         "Brian and Ed Krassenstein are American twin brothers known for their presence on Twitter as part of the anti-Trump Resistance movement."]
-    // }
+    const requestData = {
+        "links":
+            ["https://en.wikipedia.org/wiki/Brian_and_Ed_Krassenstein|-|",
+            "https://mobile.twitter.com/edkrassen|-|",
+            "https://www.instagram.com/ed_krassenstein/?hl=en|-|",
+            "https://www.rollingstone.com/culture/culture-news/krassenstein-brothers-twitter-elon-musk-1234646852/|-|",
+            "https://knowyourmeme.com/memes/people/brian-and-ed-krassenstein"],
+        "titles": 
+            ["Brian and Ed Krassenstein - Wikipedia|-|",
+            "Ed Krassenstein (@EdKrassen) / Twitter|-|",
+            "Eddie Krassenstein (@ed_krassenstein) • Instagram photos|-|",
+            "Krassenstein Brothers Return to Twitter to Battle Elon Musk|-|",
+            "Brian and Ed Krassenstein | Know Your Meme"],
+        "descriptions":
+            ["Brian and Ed Krassenstein are American twin brothers who are writers, entrepreneurs, and social media personalities. They reside in Fort Myers, Florida and ...|-|",
+            "Ed Krassenstein. @EdKrassen. Living in reality. Follow my twin: @Krassenstein . Web3 futurist. DeSo: http://diamondapp.com/u/Krassenstein Subscribe on ...|-|",
+            "Eddie Krassenstein. Building on the DeSo Blockchain. Co-founded 3dprint.com, NFTz.me, HillReporter.com, etc. diamondapp.com/u/Krassenstein. 51 posts.|-|",
+            "Twin brothers Edward and Brian Krassenstein, of Fort Myers, Florida, were once little-known entrepreneurs who ran investment web forums that ...|-|",
+            "Brian and Ed Krassenstein are American twin brothers known for their presence on Twitter as part of the anti-Trump Resistance movement."]
+    }
 
     // console.log(requestData);
 
@@ -48,15 +48,19 @@ function checkBackground(info, tab) {
     //     target: {tabId: tab.id}
     // })
 
-    // chrome.windows.create({'url': 'popup/search-popup.html', 'type': 'popup'}, function(window) {
+    // chrome.windows.create({'url': 'popup/search-popup.html?test=5', 'type': 'popup'}, function(window) {
     // });
 
-    (async () => {
-        const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
-        const response = await chrome.tabs.sendMessage(tab.id, {greeting: "hello"});
-        // do something with response here, not outside the function
-        console.log(response);
-    })();
+    const requestDataParams = new URLSearchParams(requestData).toString();
+
+    chrome.windows.create({url: "popup/search-popup.html?" + requestDataParams, type: "popup"});
+
+    // (async () => {
+    //     const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
+    //     const response = await chrome.tabs.sendMessage(tab.id, {greeting: "hello"});
+    //     // do something with response here, not outside the function
+    //     console.log(response);
+    // })();
 }
 
 chrome.contextMenus.create({
@@ -65,4 +69,4 @@ chrome.contextMenus.create({
     id: CONTEXT_MENU_ID
 });
 
-chrome.contextMenus.onClicked.addListener(checkBackground);
+chrome.contextMenus.onClicked.addListener(checkAuthorBackground);
