@@ -10,6 +10,7 @@ import nltk
 import string
 nltk.download('stopwords')
 
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -27,16 +28,6 @@ auth.set_access_token(acces_token, acces_token_secret)
 
 api = tweepy.API(auth)
 
-
-# Extract tweets
-#public_tweets = api.home_timeline()
-
-#for tweet in public_tweets:
- #    print(tweet.user.screen_name, '\n')
-  #   print(tweet.text, '\n')
-   #  print(" ----------------------  \n")
-    
-    
     
 # Certain user tweets
 user = 'BarackObama'
@@ -78,9 +69,6 @@ for tweet in tweets:
     tweet_list.append(input)
     
     
-    
-
-
 def most_common_words(text_list, n=10, language='english'):
     # join all the strings in the list
     text = ' '.join(text_list)
