@@ -1,27 +1,34 @@
-from fastapi.encoders import jsonable_encoder
-from pydantic import BaseModel
-from fastapi import FastAPI
-from mangum import Mangum
 import json
-import os
+import boto3
+
+# from check import check_author
+
+tableName = "scrapper"
+
+# create the DynamoDB resource
+dynamodb = boto3.resource('dynamodb').Table(tableName)
 
 
-class Document(BaseModel):
-    text: str
-    count: int
-
-
-
-
-app = FastAPI()
-lambda_handler = Mangum(app)
-
-
-@app.get("/")
-async def welcome():
-    return {"Message": "Welcome"}
-
-@app.post("/add_document")
-async def add_document(document: Document):
-    json_text = jsonable_encoder(document)
-    return {"Message": f"Succesfully added new document! -  {json_text}"}
+def lambda_handler(event, context):
+    body = json.loads(event['body'])
+    name = body['name'].upper()
+    if name:
+        response = dynamodb.get_item(
+            Key={'name': name}
+        )
+        if "Item" in response:
+            msg = response['Item']
+        else:
+            # scrap_response = check_author(name)
+            msg = "MOCK"
+    else:
+        msg = "Error. Provide a name"
+    result = {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": str(msg),
+        "isBase64Encoded": False
+    }
+    return result
