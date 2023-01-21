@@ -1,6 +1,6 @@
 const CONTEXT_MENU_ID = "MY_CONTEXT_MENU";
 
-function checkAuthorBackground(info, tab) {
+function checkAuthor(info, tab) {
     if (info.menuItemId !== CONTEXT_MENU_ID) {
         return;
     }
@@ -12,11 +12,13 @@ function checkAuthorBackground(info, tab) {
     //     url: "http://www.google.com/search?q=" + info.selectionText
     // });
  
-    // 127.0.0.1 is the address of the server.
     // Direct request, such as https://customsearch.googleapis.com/customsearch/v1?q=Ed%20Krassenstein&cx=f393ab8cb82b8474f&key=GOOGLE_SEARCH_API_KEY
     // also works, but it exposes the API key. A safer approach would be to send the request on the server.
-    fetch('https://google.com/').then(r => r.text()).then(result => {
-        // Result now contains the response text, do what you want...
+    const method = "POST";
+    const body = JSON.stringify({ "name": "andrzej duda" });
+
+    fetch("https://google.com/",
+    { method: method, body: body }).then(r => r.text()).then(result => {
         console.log(result);
 
         const requestData = {
@@ -50,16 +52,16 @@ function checkAuthorBackground(info, tab) {
         }
 
         console.log(requestData);
-
+    
+        const requestDataParams = new URLSearchParams(requestData).toString();
+    
+        chrome.windows.create({url: "popup/search-popup.html?type=checkAuthor&" + requestDataParams, type: "popup"});
+    
         // chrome.scripting.executeScript({
         //     files: ["content.js"],
         //     target: {tabId: tab.id}
         // })
-    
-        const requestDataParams = new URLSearchParams(requestData).toString();
-    
-        chrome.windows.create({url: "popup/search-popup.html?" + requestDataParams, type: "popup"});
-    
+
         // (async () => {
         //     const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
         //     const response = await chrome.tabs.sendMessage(tab.id, {greeting: "hello"});
@@ -78,5 +80,5 @@ if (chrome.contextMenus) {
         });
     });
 
-    chrome.contextMenus.onClicked.addListener(checkAuthorBackground);
+    chrome.contextMenus.onClicked.addListener(checkAuthor);
 }

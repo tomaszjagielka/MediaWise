@@ -1,1 +1,5 @@
-console.log("This is a popup!");
+// function openInNewTab(url) {
+//     window.open(url, '_blank').focus();
+// }
+
+// openInNewTab("https://example.org/");
