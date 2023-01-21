@@ -30,5 +30,3 @@ def check_author(name: str):
             break
     scraped_text = scrape_website(url_to_check)
     return scraped_text
-
-    check_author("Andrzej Duda")
