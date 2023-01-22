@@ -43,12 +43,19 @@ def lambda_handler(event, context):
             Key={'name': name}
         )
         if "Item" in response:
-            msg = response['Item']
+            msg = response['Item']['info']
         else:
             url = search_wiki_in_google(name)
             if url:
                 page_id = get_page_id(url)
                 msg = get_page(page_id)
+                dynamodb.update_item(
+                    Key={'name': str(name)},
+                    UpdateExpression="set info = :value",
+                    ExpressionAttributeValues={
+                        ':value': str(msg),
+                    },
+                )
             else:
                 msg = "Error. No wiki page"
     else:
