@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+mangum
+requests
+boto3
+tweepy
+configparser
+pandas
+emoji
+nltk
+beautifulsoup4
+google
