@@ -50,7 +50,7 @@ There should appear a window that will ask you to attach an extension folder.
 ## Solution stack
 ![Solution stack](https://user-images.githubusercontent.com/54605544/213924791-83abdce3-e1e5-4da4-987c-f312d20f94e7.png)
 
-## Credits:
+## Credits
 * Abay Utebaiuly – Product Manager, Data Scientist
 * [Tomasz Jagiełka](https://github.com/tomaszjagielka) – Software Engineer
 * Bart Pawlowski – Business Professional
