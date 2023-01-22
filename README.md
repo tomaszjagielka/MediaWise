@@ -24,7 +24,7 @@
 ## [Landing page](https://mediawiseai.bubbleapps.io/version-test)
 ![MediaWiseLandingPage](https://user-images.githubusercontent.com/54605544/213921342-2d88356a-5a23-44ea-b7fe-ae5613d44f99.png)
 
-## [Features page](https://user-images.githubusercontent.com/54605544/213920416-0ef85170-1caa-4d81-83b6-e232ce164b96.png) (support for mobile users)
+## [Features page](http://mindguards-website.s3-website-us-west-2.amazonaws.com/) (support for mobile users)
 ![Features page](https://user-images.githubusercontent.com/54605544/213921105-98fb0cd9-7d20-4fda-bcbb-a53a15e6e58a.png)
 
 ## Extension installation instructions for Chrome
