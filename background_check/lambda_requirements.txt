@@ -1,3 +1,5 @@
+google
 requests
 bs4
 boto3
+wikipedia
