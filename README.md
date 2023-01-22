@@ -1,19 +1,18 @@
-# 1991HackathonMedia
 
-## How to deploy lambda function on AWS
-1. Create lambda function from scratch
-2. Pack requirements to zip file
-```python
-pip install -t lib -r lambda_requirements.txt
-```
-```python
-(cd lib; zip ../lambda_function.zip -r .)
-```
-```python
-zip lambda_function.zip -u lambda_function.py
-```
-3. Upload zip file as code to lambda function
-4. Make functional URL
-- Change AWS_IAM to NONE
-- Configure CORS
-5. Ready to make requests
+# How to install extension on chrome browser
+1. Download code from repository clicking code and download ZIP.
+<br/><br/>
+![Drag Racing](/images/zero.png | width=50)
+<br/><br/>
+2. Open your chrome browser and click on the extensions.
+<br/><br/>
+![Drag Racing](/images/first.png)
+<br/><br/>
+3. New window will showup and click on the Menage extensions button.
+<br/><br/>
+![Drag Racing](/images/second.png )
+<br/><br/>
+4. Click on Developer mode (right corner) and then click Load unpacked button.
+There should appear a window that is pleasing you to attach extension folder.
+<br/><br/>
+5. You are ready to go!
