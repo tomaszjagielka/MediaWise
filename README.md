@@ -1,6 +1,6 @@
 
 # How to install extension on chrome browser
-1. Download code from repository clicking code and download ZIP.
+1. Download code from repository clicking code and download ZIP and then unzip the folders.
 <br/><br/>
 ![Drag Racing](/images/zero.png)
 <br/><br/>
