@@ -1,20 +1,57 @@
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54605544/213916524-6f112536-339c-4f65-8b59-fc8f83af3999.png" height="165" alt="MediaWise logo"></h1>
+</p>
 
-# How to install extension on chrome browser
-1. Download code from repository clicking code and download ZIP and then unzip the folders.
+<p align="center">
+  The most convenient fact-checking tool to help fight disinformation.
+</p>
+<br>
+
+<p align="center">
+  <a href="https://www.javascript.com/"><img src="https://img.shields.io/badge/%20-JavaScript-8B8000?logo=javascript&logoColor=white" alt="JavaScript"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/%20-Python-%233776AB?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://aws.amazon.com/lambda/"><img src="https://img.shields.io/badge/%20-AWS Lambda-%238B4000?logo=awslambda&logoColor=whitesmoke" alt="AWS Lambda"></a>
+  <a href="https://aws.amazon.com/dynamodb/"><img src="https://img.shields.io/badge/%20-Amazon DynamoDB-%234053D6?logo=amazondynamodb&logoColor=whitesmoke" alt="Amazon DynamoDB"></a>
+</p>
+<br>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54605544/213916175-423471e7-d553-418c-b418-1f10ce80910c.gif" alt="MediaWise workflow gif">
+</p>
+<br><br>
+
+## [Landing page](https://mediawiseai.bubbleapps.io/version-test)
+![MediaWiseLandingPage](https://user-images.githubusercontent.com/54605544/213921342-2d88356a-5a23-44ea-b7fe-ae5613d44f99.png)
+
+## [Features page](https://user-images.githubusercontent.com/54605544/213920416-0ef85170-1caa-4d81-83b6-e232ce164b96.png) (support for mobile users)
+![Features page](https://user-images.githubusercontent.com/54605544/213921105-98fb0cd9-7d20-4fda-bcbb-a53a15e6e58a.png)
+
+## Extension installation instructions for Chrome
+1. Download code from the repository clicking the green Code button, download ZIP and unzip the folders.
 <br/><br/>
-![Drag Racing](/images/zero.png)
+![First step](/images/zero.png)
 <br/><br/>
-2. Open your chrome browser and click on the extensions.
+2. Open your browser and click on the extensions.
 <br/><br/>
-![Drag Racing](/images/first.png)
+![Second step](/images/first.png)
 <br/><br/>
-3. New window will showup and click on the Menage extensions button.
+3. New window will showup and click on the Manage Extensions button.
 <br/><br/>
-![Drag Racing](/images/second.png)
+![Third step](/images/second.png)
 <br/><br/>
 4. Turn on Developer mode (right corner) and then click Load unpacked button.
-There should appear a window that is pleasing you to attach extension folder.
+There should appear a window that will ask you to attach an extension folder.
 <br/><br/>
-![Drag Racing](/images/third.png)
+![Fourth step](/images/third.png)
 <br/><br/>
-5. You are ready to go!
+5. You are good to go!
+
+## Credits:
+* Abay Utebaiuly – Product Manager, Data Scientist
+* [Tomasz Jagiełka](https://github.com/tomaszjagielka) – Software Engineer
+* Bart Pawlowski – Business Professional
+* [Beniamin Sereda](https://github.com/ujo142) – Machine Learning Developer
+* Anastasiia Stepanova – Digital Marketing Professional
+* [Ali Akhmetbek](https://github.com/Akhmetbekali) – Data Engineer
+* [Romil Javed](https://github.com/romiljaved) – Product Designer
