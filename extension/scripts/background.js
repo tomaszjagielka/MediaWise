@@ -15,12 +15,12 @@ function checkAuthor(info, tab) {
     // Direct request, such as https://customsearch.googleapis.com/customsearch/v1?q=Ed%20Krassenstein&cx=f393ab8cb82b8474f&key=GOOGLE_SEARCH_API_KEY
     // also works, but it exposes the API key. A safer approach would be to send the request on the server.
     const method = "POST";
-    const body = JSON.stringify({ "name": "andrzej duda" });
+    const body = JSON.stringify({ "name": info.selectionText });
 
-    fetch("https://google.com/",
+    fetch("https://qb830er0ti.execute-api.us-west-2.amazonaws.com/dev/check_authors",
     { method: method, body: body }).then(r => r.text()).then(result => {
         console.log(result);
-
+        
         const requestData = {
             // "links":
             //     ["https://en.wikipedia.org/wiki/Brian_and_Ed_Krassenstein|-|",
@@ -42,13 +42,9 @@ function checkAuthor(info, tab) {
             // "Brian and Ed Krassenstein are American twin brothers known for their presence on Twitter as part of the anti-Trump Resistance movement."]
     
             "serviceNames": 
-                ["Wikipedia|-|", "Lorem ipsum|-|", "Lorem ipsum|-|", "Lorem ipsum|-|", "Lorem ipsum"],
+                ["Wikipedia"],
             "descriptions":
-                ["Barack Hussein Obama II (/bəˈrɑːk huːˈseɪn oʊˈbɑːmə/ (listen) bə-RAHK hoo-SAYN oh-BAH-mə;[1] born August 4, 1961) is an American politician who served as the 44th president of the United States from 2009 to 2017. A member of the Democratic Party, Obama was the first African-American president of the United States.[2] He previously served as a U.S. senator from Illinois from 2005 to 2008 and as an Illinois state senator from 1997 to 2004, and previously worked as a civil rights lawyer before entering politics.|-|",
-                "Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.|-|",
-                "Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.|-|",
-                "Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus.|-|",
-                "Pellentesque nec elit vitae mauris viverra commodo. Nulla luctus leo a diam tempus, sed viverra lectus maximus."]
+                [result]
         }
 
         console.log(requestData);
