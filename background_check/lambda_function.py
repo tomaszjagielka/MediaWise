@@ -13,12 +13,12 @@ dynamodb = boto3.resource('dynamodb').Table(tableName)
 
 
 def search_wiki_in_google(query: str):
-    gs = googlesearch.search(f"{query} wikipedia")
+    gs = googlesearch.search(f"{query}")
     url = ""
     for i in gs:
         if 'wikipedia.org/wiki/' in i:
             url = i
-        break
+            break
     return url
 
 
