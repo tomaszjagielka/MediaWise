@@ -50,11 +50,14 @@ There should appear a window that will ask you to attach an extension folder.
 ## Solution stack
 ![Solution stack](https://user-images.githubusercontent.com/54605544/213924791-83abdce3-e1e5-4da4-987c-f312d20f94e7.png)
 
-## Credits
-* Abay Utebaiuly – Product Manager, Data Scientist
-* [Tomasz Jagiełka](https://github.com/tomaszjagielka) – Software Engineer
-* Bart Pawlowski – Business Professional
-* [Beniamin Sereda](https://github.com/ujo142) – Machine Learning Developer
-* Anastasiia Stepanova – Digital Marketing Professional
-* [Ali Akhmetbek](https://github.com/Akhmetbekali) – Data Engineer
+<hr>
+
+![credits](https://user-images.githubusercontent.com/54605544/214126215-46d83ed4-033c-4bc0-b5d3-184fcbef7844.png)
+
+* [Tomasz Jagiełka](https://github.com/tomaszjagielka) – Software Engineer, AI
+* Abay Utebaiuly – Team Lead/Data Analyst
+* Bart Pawlowski – Fake News Expert
+* Anastasiia Stepanova – Marketing Communications
 * [Romil Javed](https://github.com/romiljaved) – Product Designer
+* [Ali Akhmetbek](https://github.com/Akhmetbekali) – Cloud Data Engineer
+* [Beniamin Sereda](https://github.com/ujo142) – Machine Learning Developer
